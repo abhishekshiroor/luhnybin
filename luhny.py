@@ -13,7 +13,7 @@ def isLuhny(cardNum):
 			sum+=luhnMultiples[num]
 	return sum%10==0
 		
-def cardWindow(cardNum):
+def luhnCheck(cardNum):
 	cardNum=cardNum.replace('-','').replace(' ','')
 	newCardNum=cardNum
 	if len(cardNum) < 14:return cardNum
@@ -36,6 +36,6 @@ def reformat(maskedNum,cardNum):
 while True:
 	try:
 		cardNum = raw_input()
-		print reformat(list(cardWindow(cardNum.strip())),cardNum)
+		print reformat(list(luhnCheck(cardNum.strip())),cardNum)
 	except EOFError, e:
 		break
